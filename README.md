@@ -1,28 +1,42 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/T6sJM4w6)
-# Week 5 — Midnight Mail Train
-
 ## Summary
-Write 3–6 lines explaining what this assignment does.
+This assignment builds a system for managing train cars, validating ticket codes, and processing messages using recursion and linked lists.
 
 ## Approach
-- Problem 1:
-- Problem 2:
-- Problem 3:
-- Problem 4:
+
+Problem 1:
+Used a doubly linked list to manage train cars and allow reverse traversal.
+
+Problem 2:
+Validated ticket codes by checking prefix and numeric format.
+
+Problem 3:
+Used recursion to count occurrences of a target label.
+
+Problem 4:
+Used recursion to remove spaces from a message.
 
 ## Complexity
-Write the time and space complexity for each required problem.
-Give a short reason for each one.
+
+Problem 1: Time O(n), Space O(n)  
+Problem 2: Time O(n), Space O(1)  
+Problem 3: Time O(n), Space O(n)  
+Problem 4: Time O(n), Space O(n)  
 
 ## Edge-case checklist
-- [ ] empty train
-- [ ] one train car
-- [ ] invalid ticket code
-- [ ] empty label list
-- [ ] empty message
-- [ ] one-character or all-space message
+
+✓ empty train  
+✓ one train car  
+✓ invalid ticket code  
+✓ empty label list  
+✓ empty message  
+✓ one-character or all-space message  
 
 ## Assistance & Sources
-- AI used? Y/N
-- What it helped with:
-- Other sources used:
+
+AI used? Y  
+
+What it helped with:  
+Helped understand structure, recursion, and debugging.
+
+Other sources used:  
+Class notes and examples.
