@@ -33,7 +33,7 @@ Problem 4: Time O(n), Space O(n)
 
 ## Assistance & Sources
 
-AI used? Y  
+AI used? Y (For ideas only not all ) 
 
 What it helped with:  
 Helped understand structure, recursion, and debugging.
