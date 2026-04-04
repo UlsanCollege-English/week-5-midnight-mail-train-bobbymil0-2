@@ -4,39 +4,40 @@ This assignment builds a system for managing train cars, validating ticket codes
 ## Approach
 
 Problem 1:
-Used a doubly linked list to manage train cars and allow reverse traversal.
+Used a doubly linked list to manage train cars and support reverse traversal from the tail.
 
 Problem 2:
-Validated ticket codes by checking prefix and numeric format.
+Validated ticket codes by checking the `"MM-"` prefix and ensuring the remainder is exactly 4 digits.
 
 Problem 3:
-Used recursion to count occurrences of a target label.
+Used recursion with an index-based helper to count how many times a target label appears.
 
 Problem 4:
-Used recursion to remove spaces from a message.
+Used recursion with an index-based helper to remove spaces and return a cleaned message.
 
 ## Complexity
 
-Problem 1: Time O(n), Space O(n)  
-Problem 2: Time O(n), Space O(1)  
-Problem 3: Time O(n), Space O(n)  
-Problem 4: Time O(n), Space O(n)  
+Problem 1: append/detach `O(1)`; reverse traversal `O(n)`. Space `O(n)`.
+Problem 2: Time `O(n)`, Space `O(1)`.
+Problem 3: Time `O(n)`, Space `O(n)` (call stack).
+Problem 4: Time `O(n)`, Space `O(n)` (call stack + output).
 
 ## Edge-case checklist
 
-✓ empty train  
-✓ one train car  
-✓ invalid ticket code  
-✓ empty label list  
-✓ empty message  
-✓ one-character or all-space message  
+- [x] empty train
+- [x] one train car
+- [x] several train cars
+- [x] invalid ticket code (wrong prefix / wrong digits / wrong length)
+- [x] empty label list
+- [x] empty message
+- [x] one-character or all-space message
 
 ## Assistance & Sources
 
-AI used? Y (For ideas only not all ) 
+AI used? Yes (for ideas only; not copied verbatim).
 
-What it helped with:  
-Helped understand structure, recursion, and debugging.
+What it helped with:
+Helped with problem decomposition, recursion structure, and debugging.
 
-Other sources used:  
+Other sources used:
 Class notes and examples.

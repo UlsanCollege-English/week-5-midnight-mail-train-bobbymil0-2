@@ -1,32 +1,42 @@
 from src.challenges import (
     MidnightMailDLL,
-    count_priority_labels,
     clean_radio_message,
-    is_valid_ticket_code
+    count_priority_labels,
+    is_valid_ticket_code,
 )
+
 
 # ======================
 # Problem 2 Tests
 # ======================
 
-def test_ticket_valid():
-    assert is_valid_ticket_code("MM-1234") == True
 
-def test_ticket_invalid():
-    assert is_valid_ticket_code("XX-1234") == False
+def test_ticket_valid() -> None:
+    assert is_valid_ticket_code("MM-1234") is True
 
-def test_ticket_short():
-    assert is_valid_ticket_code("MM-12") == False
 
-def test_ticket_empty():
-    assert is_valid_ticket_code("") == False
+def test_ticket_invalid_prefix() -> None:
+    assert is_valid_ticket_code("XX-1234") is False
+
+
+def test_ticket_invalid_short() -> None:
+    assert is_valid_ticket_code("MM-12") is False
+
+
+def test_ticket_edge_empty() -> None:
+    assert is_valid_ticket_code("") is False
+
+
+def test_ticket_invalid_non_digits() -> None:
+    assert is_valid_ticket_code("MM-12A4") is False
 
 
 # ======================
 # Problem 1 Tests
 # ======================
 
-def test_dll_append_and_reverse():
+
+def test_dll_append_and_reverse() -> None:
     train = MidnightMailDLL()
     train.append_car("A")
     train.append_car("B")
@@ -34,7 +44,8 @@ def test_dll_append_and_reverse():
 
     assert train.to_reverse_list() == ["C", "B", "A"]
 
-def test_dll_detach():
+
+def test_dll_detach_to_empty() -> None:
     train = MidnightMailDLL()
     train.append_car("A")
     train.append_car("B")
@@ -44,16 +55,22 @@ def test_dll_detach():
     assert train.detach_last_car() is None
 
 
+def test_dll_empty_reverse_and_detach() -> None:
+    train = MidnightMailDLL()
+    assert train.to_reverse_list() == []
+    assert train.detach_last_car() is None
+
+
 # ======================
 # Problem 3 Tests
 # ======================
 
-def test_count_priority():
-    assert count_priority_labels(
-        ["PRIORITY", "NORMAL", "PRIORITY"], "PRIORITY"
-    ) == 2
 
-def test_count_empty():
+def test_count_priority() -> None:
+    assert count_priority_labels(["PRIORITY", "NORMAL", "PRIORITY"], "PRIORITY") == 2
+
+
+def test_count_empty() -> None:
     assert count_priority_labels([], "PRIORITY") == 0
 
 
@@ -61,11 +78,18 @@ def test_count_empty():
 # Problem 4 Tests
 # ======================
 
-def test_clean_message():
+
+def test_clean_message() -> None:
     assert clean_radio_message("go now") == "gonow"
 
-def test_clean_spaces():
+
+def test_clean_spaces() -> None:
     assert clean_radio_message(" a b ") == "ab"
 
-def test_clean_empty():
+
+def test_clean_empty() -> None:
     assert clean_radio_message("") == ""
+
+
+def test_clean_all_spaces() -> None:
+    assert clean_radio_message("     ") == ""
