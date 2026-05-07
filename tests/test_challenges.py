@@ -61,6 +61,19 @@ def test_dll_empty_reverse_and_detach() -> None:
     assert train.detach_last_car() is None
 
 
+def test_dll_append_after_detach_keeps_list_consistent() -> None:
+    train = MidnightMailDLL()
+    train.append_car("A")
+    train.append_car("B")
+    assert train.detach_last_car() == "B"
+    train.append_car("C")
+
+    assert train.to_reverse_list() == ["C", "A"]
+    assert train.detach_last_car() == "C"
+    assert train.detach_last_car() == "A"
+    assert train.detach_last_car() is None
+
+
 # ======================
 # Problem 3 Tests
 # ======================
@@ -93,3 +106,11 @@ def test_clean_empty() -> None:
 
 def test_clean_all_spaces() -> None:
     assert clean_radio_message("     ") == ""
+
+
+def test_ticket_invalid_extra_characters_after_digits() -> None:
+    assert is_valid_ticket_code("MM-1234X") is False
+
+
+def test_count_priority_all_match() -> None:
+    assert count_priority_labels(["PRIORITY", "PRIORITY"], "PRIORITY") == 2
