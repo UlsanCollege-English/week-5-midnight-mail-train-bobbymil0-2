@@ -1,7 +1,9 @@
 from src.challenges import (
     MidnightMailDLL,
     clean_radio_message,
+    clean_radio_message_iterative,
     count_priority_labels,
+    count_priority_labels_iterative,
     is_valid_ticket_code,
 )
 
@@ -106,6 +108,14 @@ def test_clean_empty() -> None:
 
 def test_clean_all_spaces() -> None:
     assert clean_radio_message("     ") == ""
+
+
+def test_count_priority_iterative() -> None:
+    assert count_priority_labels_iterative(["PRIORITY", "NORMAL", "PRIORITY"], "PRIORITY") == 2
+
+
+def test_clean_message_iterative() -> None:
+    assert clean_radio_message_iterative("go now") == "gonow"
 
 
 def test_ticket_invalid_extra_characters_after_digits() -> None:

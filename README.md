@@ -41,3 +41,9 @@ Helped with problem decomposition, recursion structure, and debugging.
 
 Other sources used:
 Class notes and examples.
+## Optional Stretch — Iterative vs Recursive
+
+- `count_priority_labels` and `clean_radio_message` use recursion to meet the assignment requirement.
+- `count_priority_labels_iterative` and `clean_radio_message_iterative` use iteration and Python idioms.
+- The recursive versions are clearer for demonstrating call stack use.
+- The iterative versions avoid extra call stack space and are more efficient in Python.

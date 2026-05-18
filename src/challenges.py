@@ -121,3 +121,11 @@ def clean_radio_message(message: str) -> str:
 
     _collect_chars(0)
     return "".join(cleaned_chars)
+
+
+def count_priority_labels_iterative(labels: list[str], target: str) -> int:
+    return sum(1 for label in labels if label == target)
+
+
+def clean_radio_message_iterative(message: str) -> str:
+    return message.replace(" ", "")
